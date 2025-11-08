@@ -67,13 +67,13 @@ pytest
 ## نمونه Endpoints
 
 
-| ------------------------------------- | ----------------------------- |
-| POST /api/accounts/otp/send/          | ارسال کد OTP برای ورود        |
-| POST /api/accounts/otp/verify/        | تأیید کد و ورود               |
-| POST /api/accounts/register/buyer/    | ثبت‌نام خریدار (چندمرحله‌ای)  |
-| POST /api/accounts/register/seller/   | ثبت‌نام فروشنده (چندمرحله‌ای) |
-| POST /api/accounts/register/marketer/ | ثبت‌نام بازاریاب              |
-| GET /api/accounts/profile/            | مشاهده/ویرایش پروفایل         |
+
+POST /api/accounts/otp/send/     >>>    ارسال کد OTP برای ورود        
+POST /api/accounts/otp/verify/     >>>    تأیید کد و ورود               
+POST /api/accounts/register/buyer/  >>>  ثبت‌نام خریدار (چندمرحله‌ای)  
+POST /api/accounts/register/seller/ >>>  ثبت‌نام فروشنده (چندمرحله‌ای) 
+POST /api/accounts/register/marketer/  >>> ثبت‌نام بازاریاب              
+GET /api/accounts/profile/    >>>    مشاهده/ویرایش پروفایل         
 
 ---
 
@@ -89,4 +89,4 @@ pytest
 
 * فایل‌های `.env` را حذف یا به `.env.example` تبدیل کنید
 * داده‌های حساس در پوشه‌ی `media/` پاک یا نمونه‌سازی شوند
-* README و اسکرین‌شات مناسب اضافه کنید
+
