@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# SQLite and logs
+*.sqlite3
+*.log
+
+# Environment variables
+.env
+.env.*
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# Django static/media
+staticfiles/
+media/
+
+# VSCode / PyCharm / IDE settings
+.vscode/
+.idea/
+
+# Docker
+*.pid
+*.tar
+*.log
+docker-compose.override.yml
+__docker_build__/
+
+# Ignore migration files
+*/migrations/
+
+# Test and coverage
+.coverage
+htmlcov/
+.tox/
+.pytest_cache/
+nosetests.xml
+coverage.xml
+
+# mypy, pyright, pyre
+.mypy_cache/
+.dmypy.json
+.pyre/

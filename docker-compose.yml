@@ -1,0 +1,39 @@
+services:
+  web:
+    build: .
+    command: python /code/manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+      - ./media:/app/media
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+      - redis
+    env_file:
+      - .env.dev
+      - .env.prod  
+    environment:
+      - "DATABASE_URL=${DOCKER_COMPOSE_DATABASE_URL}"
+      - "DJANGO_SECRET_KEY=${DOCKER_COMPOSE_DJANGO_SECRET_KEY}"
+      - "DJANGO_DEBUG=${DOCKER_COMPOSE_DJANGO_DEBUG}"
+      - "REDIS_URL=${DOCKER_COMPOSE_REDIS_URL}"
+      - "REDIS_PASSWORD=${DOCKER_COMPOSE_REDIS_PASSWORD}"
+
+  db:
+    image: postgres:14
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+    command: redis-server --requirepass ${DOCKER_COMPOSE_REDIS_PASSWORD}
+    # ports:
+    #   - 6389:6379
+      
+volumes:
+  pgdata:
